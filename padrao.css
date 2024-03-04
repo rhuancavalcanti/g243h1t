@@ -4,9 +4,18 @@
  background-color: blueviolet;
  
 }
-#dispositivo{
+.mobile{
     font-size: 60px;
     color: white;
+    text-align: center;
+}
+
+.tablet{
+    display: none;
+}
+
+.desktop{
+    display: none;
 }
 
 @media (min-width: 800px){
@@ -14,8 +23,15 @@
     height: 150px;
     background-color: red;
 }
-#dispositivo{
+.mobile{
     display: none;
+}
+.tablet{
+    display: inline;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+}
 }
 
 @media (min-width: 1228px){
@@ -23,9 +39,18 @@
     height: 150px;
     background-color: blue;
 }
-.dispositivo{
+.tablet{
     display: none;
+ }
+ .desktop{
+    display: inline;
+    font-size: 60px;
+    color: white;
+    text-align: center;
 }
+}
+
+
 .rodape {
 text-align: center;
 }
