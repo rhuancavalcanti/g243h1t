@@ -1,92 +1,47 @@
-.barra {
-    width: 100%;
-    height: 100px;
-    background-color: rgb(121, 185, 140);
-    text-align: center;
-}
+imprime = (msg) => console.log(msg);
 
-.mobile{
-    font-size: 60px;
-    color: rgb(7, 56, 3);
-    text-align: center;
-}
-.tablet{
-    display: none;
-}
-.desktop{
-    display: none;
-}
-.conteudo{
-    width: 100%;
-    background-color: rgb(196, 255, 230);
-}
-.botoes{
-    width: 100%;
-    height: 30px;
-    background-color: rgb(0, 184, 184);
-    font-size: 28px;
-    padding-top: 2px;
-    padding-bottom: 4px;
-}
+function hora_atual(){
+    setTimeout(());
+document.getElementById("h").innerHTML = 
+data.getHours() + ":" data.getMinutes + ":" + getSeconds();
+},10000);
 
-.abageral{
-    width: 100%;
-    height: 400px;
-}
-.aba1 {
-    width: 100%;
-    height: 400px;
-    background-color: rgb(167, 216, 199);
-    display: none;
-}
-.aba2 {
-    width: 100%;
-    height: 400px;
-    background-color: rgb(128, 233, 189);
-    display: none;
-}
-.aba3 {
-    width: 100%;
-    height: 400px;
-    background-color: rgb(119, 211, 179);
-    display: none;
-}
-.aba4 {
-    width: 100%;
-    height: 400px;
-    background-color: rgb(94, 223, 178);
-    display: none;
-}
-@media (min-width: 800px) {
-    .barra{
-        height: 150px;
-        background-color: rgb(161, 216, 253);
-    }
-    .mobile {
-        display: none;
-    }
-    .tablet {
-        display: inline;
-        font-size: 30px;
-        color: rgb(5, 0, 80);
-    }
-    .botoes{
-        width: 24.7%;
-    }
-}
+hora_atual();
 
-@media (min-width: 1228px){
-    .barra {
-        height: 200px;
-        background-color: cadetblue;
+fazerSorteio = ()  => {
+    let num1 = document.getElementById("inicio").value;
+    let num2 = document.getElementById("fim").value;
+    num2 = Number(num2) + 1;
+    let sorteio = Math.floor(Math.random() * Number(num2) - Number(num1));
+
+    document.getElementById("resultado").innerHTML = sorteio;   
+}
+function escolher_aba(btn){
+    for(let i = 1; i <= 4; i++){
+        let id_btn = "btn"+i;
+        let id_aba = "aba"+i;
+        document.getElementById(id_btn).style.backgroundColor = "aqua";
+        document.getElementById(id_btn).disabled = false;
+        document.getElementById(id_aba).style.display = "none";
     }
-    #tablet {
-        display: none;
+    if(btn == "1"){
+        document.getElementById("btn1").style.backgroundColor = "aquamarine";
+        document.getElementById("btn1").disabled = true;
+        document.getElementById("ab1").style.display = "block";
     }
-    #desktop {
-        display: inline;
-        font-size: 70px;
-        color: rgb(155, 221, 229);
-        text-align: center; 
+    if(btn == "2"){
+        document.getElementById("btn2").style.backgroundColor = "aquamarine";
+        document.getElementById("btn2").disabled = true;
+        document.getElementById("ab2").style.display = "block";
+    }
+    if(btn == "3"){
+        document.getElementById("btn3").style.backgroundColor = "aquamarine";
+        document.getElementById("btn3").disabled = true;
+        document.getElementById("ab3").style.display = "block";
+    }
+    if(btn == "4"){
+        document.getElementById("btn4").style.backgroundColor = "aquamarine";
+        document.getElementById("btn4").disabled = true;
+        document.getElementById("ab4").style.display = "block";
     }
 }
